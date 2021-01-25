@@ -9,7 +9,7 @@ def is_sorted(items):
 
 items = [1, 5, 11, 24, 32, 55]
 #Given list
-print ("Given list : ", items)
+print (" : ", items)
 
 items_copy = items[:]
 #Apply sort to copy
@@ -29,6 +29,22 @@ def bubble_sort(items):
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Repeat until all items are in sorted order
     # TODO: Swap adjacent items that are out of order
+    list = len(items)
+    #Traverse throug all array elemts 
+    for a in range(len(items)-1, 0, -1):
+    #Last I elements are a lreay in correct position 
+        for  i in range(a):
+            #Swap if the element found is greater than the next element 
+            if items[i] > items[i + 1] :
+                swap = items[i]
+                items[i] = items[i + 1]
+                items[i+1] = swap
+
+
+items = ['a', 'f', 'g', 'z', 'b', 'i', 'k', 'c']
+bubble_sort(items)
+print ("Your sorted array is:", items)
+
 
 
 def selection_sort(items):
