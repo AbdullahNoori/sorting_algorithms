@@ -21,6 +21,7 @@ else:
     print("No, items are not sorted.")
 
 
+
 print(is_sorted(items))
 
 def bubble_sort(items):
@@ -72,6 +73,8 @@ def selection_sort(items):
 
 print(selection_sort([1, 8, 22, 45, 9, 47, 80])) 
 
+
+
 def insertion_sort(items):
     """Sort given items by taking first unsorted item, inserting it in sorted
     order in front of items, and repeating until all items are in order.
@@ -80,7 +83,18 @@ def insertion_sort(items):
     # TODO: Repeat until all items are in sorted order
     # TODO: Take first unsorted item
     # TODO: Insert it in sorted order in front of items
+    index_length = range(1, len(items))
+    for i in index_length:
+        sort_to_value = items[i]
 
+        while  items[i-1] > sort_to_value and i>0:
+            items[i], items[i-1] = items[i-1], items[i]
+            i-=1
+
+    return items
+
+
+print(insertion_sort([5, 12, 3, 2, 10, 24, 1, 8, 20]))
 
 
 
