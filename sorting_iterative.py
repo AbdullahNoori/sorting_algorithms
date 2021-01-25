@@ -21,6 +21,7 @@ else:
     print("No, items are not sorted.")
 
 
+print(is_sorted(items))
 
 def bubble_sort(items):
     """Sort given items by swapping adjacent items that are out of order, and
@@ -55,7 +56,21 @@ def selection_sort(items):
     # TODO: Repeat until all items are in sorted order
     # TODO: Find minimum item in unsorted items
     # TODO: Swap it with first unsorted item
+    index_length = range(0, len(items)-1)
 
+    for i in index_length:
+        min_value = i
+
+        for j in range(i+1, len(items)):
+            if items[j] < items[min_value]:
+                min_value = j
+
+        if min_value != i:
+            items[min_value], items[i] = items[i], items[min_value]
+
+    return items
+
+print(selection_sort([1, 8, 22, 45, 9, 47, 80])) 
 
 def insertion_sort(items):
     """Sort given items by taking first unsorted item, inserting it in sorted
@@ -69,6 +84,6 @@ def insertion_sort(items):
 
 
 
-print(is_sorted(items))
+
 
 # print(bubble_sorted(items))
