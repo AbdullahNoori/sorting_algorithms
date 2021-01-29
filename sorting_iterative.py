@@ -1,3 +1,4 @@
+
 #!python
 
 
@@ -7,22 +8,16 @@ def is_sorted(items):
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check that all adjacent items are in order, return early if so
 
-items = [1, 5, 11, 24, 32, 55]
+    # items = [1, 5, 11, 55, 10, 15, 32, 55]
+
+items = [11,23,42,51,67, 99, 100]
 #Given list
-print (" : ", items)
-
-items_copy = items[:]
-#Apply sort to copy
-items_copy.sort()
-
-if (items == items_copy):
-    print("Yes, items are sorted.")
+print("Given list : ",items)
+# Apply all and range
+if (all(items[i] <= items[i + 1] for i in range(len(items)-1))):
+   print("Yes, List is sorted.")
 else:
-    print("No, items are not sorted.")
-
-
-
-print(is_sorted(items))
+   print("No, List is not sorted.")
 
 def bubble_sort(items):
     """Sort given items by swapping adjacent items that are out of order, and
@@ -46,8 +41,7 @@ def bubble_sort(items):
 items = ['a', 'f', 'g', 'z', 'b', 'i', 'k', 'c']
 bubble_sort(items)
 print ("Your sorted array is:", items)
-
-
+# print(bubble_sort(items))
 
 def selection_sort(items):
     """Sort given items by finding minimum item, swapping it with first
@@ -71,7 +65,7 @@ def selection_sort(items):
 
     return items
 
-print(selection_sort([1, 8, 22, 45, 9, 47, 80])) 
+print(selection_sort([1, 8, 22, 45, 9, 47, 20, 40, 80])) 
 
 
 
@@ -100,4 +94,4 @@ print(insertion_sort([5, 12, 3, 2, 10, 24, 1, 8, 20]))
 
 
 
-# print(bubble_sorted(items))
+
