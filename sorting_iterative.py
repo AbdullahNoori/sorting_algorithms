@@ -8,13 +8,21 @@ def is_sorted(items):
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check that all adjacent items are in order, return early if so
 
-    # items = [1, 5, 11, 55, 10, 15, 32, 55]
-
 items = [11,23,42,51,67, 99, 100]
 #Given list
 print("Given list : ",items)
 # Apply all and range
 if (all(items[i] <= items[i + 1] for i in range(len(items)-1))):
+   print("Yes, List is sorted.")
+else:
+   print("No, List is not sorted.")
+
+
+# Checking again
+itemsB = [51, 11,23,42,67,100,99]
+print("Given list : ",items)
+# Apply all and range
+if (all(itemsB[i] <= itemsB[i + 1] for i in range(len(itemsB)-1))):
    print("Yes, List is sorted.")
 else:
    print("No, List is not sorted.")
